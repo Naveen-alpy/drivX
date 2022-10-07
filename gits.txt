@@ -1,0 +1,15 @@
+downloading/deploying of files from GIT
+
+clone from git
+
+git clone path(https://github.com/Naveen-alpy/drivX.git) |>
+
+upload files to Git
+
+1) git add .
+2) git commit -m "message"
+3) git push
+
+sync files to local
+
+1) git pull
