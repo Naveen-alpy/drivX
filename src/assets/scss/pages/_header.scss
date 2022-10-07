@@ -1,0 +1,71 @@
+/* ===========================
+			Header Section
+=========================== */
+.project_header {
+  left: 0;
+  position: fixed;
+  top: 0;
+  @include transition(all, ease, 0.5s);
+  width: 100%;
+  z-index: 9;
+  .logo_wrap {
+    height: 80px;
+    line-height: 1;
+    @include transition(all, ease, 0.3s);
+    a {
+      line-height: 1;
+    }
+    img {
+      max-height: 80px;
+    }
+    svg {
+      height: 80px;
+    }
+  }
+  .header_right {
+    margin-left: auto;
+  }
+  .top-call {
+    color: var(--global--color-white);
+    @include fontSize(27px);
+    font-weight: $fw-600;
+    @include flex-wrap(nowrap);
+    margin-right: 30px;
+    .text {
+      white-space: nowrap;
+    }
+    i {
+      background-color: #227135;
+      @include border-radius(50%);
+      @include flex(0, 0, 38px);
+      height: 38px;
+      line-height: 1;
+      margin-right: 10px;
+      max-width: 38px;
+      svg {
+        fill: var(--global--color-white);
+        height: 20px;
+      }
+    }
+  }
+  &.slim {
+    background: rgb(45, 154, 71);
+    background: -moz-linear-gradient(
+      176deg,
+      rgba(45, 154, 71, 1) 0%,
+      rgba(62, 201, 95, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      176deg,
+      rgba(45, 154, 71, 1) 0%,
+      rgba(62, 201, 95, 1) 100%
+    );
+    background: linear-gradient(
+      176deg,
+      rgba(45, 154, 71, 1) 0%,
+      rgba(62, 201, 95, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d9a47",endColorstr="#3ec95f",GradientType=1);
+    box-shadow: var(--global--shadow-black-10);
+  }
+}

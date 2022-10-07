@@ -1,0 +1,84 @@
+@import "assets/scss/settings/file-header";
+:root {
+  // Font Family
+  --font-primary: "Open Sans", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  /* Font Family */
+  --global--font-family-primary: var(
+    --font-primary,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif
+  );
+  --global--font-family-secondary: var(
+    --font-secondary,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif
+  );
+
+  // Colors
+  --global--color-green: #007343;
+  --global--color-yellow: #f78f1d;
+  --global--color-black: #000;
+  --global--color-white: #fff;
+  --global--color-red: #ff0100;
+  --global--color-border: #dcdcdc;
+  --global--color-grey: #f0f0f0;
+  --global--color-footer-bg: #030303;
+  --global--color-primary: var(--global--color-green);
+  --global--color-secondary: var(--global--color-yellow);
+  --global--color-border: var(--global--color-black);
+  --global--color-heading: var(--global--color-black);
+  --global--color-base-text: var(--global--color-black);
+  --global--color-banner-text-light: #faf8f2;
+
+  // Elevation
+  --global--shadow-black-20: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  --global--shadow-black-10: 0px 1px 10px rgba(0, 0, 0, 0.1);
+
+  // Opacity/Transparency
+  --global--opacity-black-20: rgba(0, 0, 0, 0.2);
+  --global--opacity-black-50: rgba(0, 0, 0, 0.5);
+  --global--opacity-black-80: rgba(0, 0, 0, 0.8);
+  --global--opacity-white-30: rgba(255, 255, 255, 0.3);
+  --global--opacity-white-50: rgba(255, 255, 255, 0.5);
+}
+// Default Values/Declarations
+@import "assets/scss/helpers/variables";
+@import "assets/scss/helpers/mixins";
+@import "assets/scss/helpers/flexbox";
+@import "assets/scss/helpers/media-queries";
+
+// Basic Resets
+@import "assets/scss/base/headings";
+@import "assets/scss/base/list-styles";
+@import "assets/scss/base/tables";
+
+//Components
+@import "assets/scss/components/buttons";
+@import "assets/scss/components/navigation";
+@import "assets/scss/components/plugins";
+
+// Layout Settings
+@import "assets/scss/layout/forms";
+@import "assets/scss/layout/reset";
+
+// Pages
+@import "assets/scss/pages/common-styles";
+@import "assets/scss/pages/mediaqueries";
+@import "assets/scss/pages/header";
+@import "assets/scss/pages/banner";
+@import "assets/scss/pages/footer";

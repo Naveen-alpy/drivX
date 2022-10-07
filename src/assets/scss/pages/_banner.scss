@@ -1,0 +1,85 @@
+/* ===========================
+			Banner Section
+=========================== */
+.project_banner {
+  background: rgb(45, 154, 71);
+  background: -moz-linear-gradient(
+    176deg,
+    rgba(45, 154, 71, 1) 0%,
+    rgba(62, 201, 95, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    176deg,
+    rgba(45, 154, 71, 1) 0%,
+    rgba(62, 201, 95, 1) 100%
+  );
+  background: linear-gradient(
+    176deg,
+    rgba(45, 154, 71, 1) 0%,
+    rgba(62, 201, 95, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d9a47",endColorstr="#3ec95f",GradientType=1);
+  overflow: hidden;
+  position: relative;
+  &:before {
+    background: transparent url(assets/images/wave-banner-bottom.png) repeat-x
+      bottom left;
+    bottom: 0;
+    content: "";
+    height: 335px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+  .container {
+    position: relative;
+    z-index: 5;
+  }
+  [class*="bnr-dots-"] {
+    @include border-radius(50%);
+    height: 525px;
+    opacity: 0.05;
+    position: absolute;
+    width: 525px;
+    z-index: 1;
+  }
+  a,
+  button {
+    text-decoration: none !important;
+  }
+  .bnr-dots-light {
+    background-color: var(--global--color-white);
+    left: -5%;
+    top: -10%;
+  }
+  .bnr-dots-dark {
+    background-color: var(--global--color-black);
+    bottom: 10%;
+    right: -15%;
+  }
+  .banner_text_wrapper {
+    padding-top: 30px;
+    .main_title {
+      color: var(--global--color-white);
+      @include fontSize(40px);
+      font-weight: $fw-500;
+      line-height: 1.4;
+      padding-top: 10px;
+    }
+  }
+  .button-group {
+    padding-top: 25px;
+    a {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+  @include min(1200) {
+    padding-top: 100px;
+    .container {
+      height: calc(98vh - 100px);
+    }
+  }
+}

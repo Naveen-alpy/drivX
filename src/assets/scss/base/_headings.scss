@@ -1,0 +1,162 @@
+// Heading Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--global--color-heading);
+  display: block;
+  font-weight: $fw-600;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 0 15px;
+  a {
+    background-color: transparent;
+    color: inherit;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none !important;
+    &:hover {
+      color: var(--global--color-primary);
+    }
+  }
+  & + p,
+  & + ul,
+  & + ol {
+    padding-top: 20px;
+  }
+  & + blockquote {
+    margin-top: 20px !important;
+  }
+  @include max(1599) {
+    padding-bottom: 10px;
+    & + p,
+    & + ul,
+    & + ol {
+      padding-top: 10px;
+    }
+    & + blockquote {
+      margin-top: 10px !important;
+    }
+  }
+  @include max(767) {
+    padding-bottom: 7px;
+  }
+}
+h1 {
+  @include fontSize(28px);
+  @include min(768) {
+    @include fontSize(32px);
+  }
+  @include min(1200) {
+    @include fontSize(40px);
+  }
+  @include min(1600) {
+    @include fontSize(55px);
+  }
+}
+h2 {
+  @include fontSize(24px);
+  @include min(768) {
+    @include fontSize(26px);
+  }
+  @include min(1200) {
+    @include fontSize(30px);
+  }
+  @include min(1600) {
+    @include fontSize(36px);
+  }
+}
+h3,
+h4 {
+  @include fontSize(22px);
+  @include min(768) {
+    @include fontSize(24px);
+  }
+  @include min(1200) {
+    @include fontSize(28px);
+  }
+  @include min(1600) {
+    @include fontSize(32px);
+  }
+}
+h5,
+h6 {
+  @include fontSize(20px);
+  @include min(768) {
+    @include fontSize(22px);
+  }
+  @include min(1200) {
+    @include fontSize(26px);
+  }
+  @include min(1600) {
+    @include fontSize(28px);
+  }
+}
+.section-titles {
+  background-color: transparent;
+  color: var(--global--color-black);
+  display: block;
+  line-height: 1;
+  padding-bottom: 15px;
+  position: relative;
+  text-align: left;
+  text-transform: none;
+  h1,
+  .h1 {
+    color: inherit !important;
+    font-family: var(--global--font-family-secondary);
+    font-weight: $fw-500;
+    line-height: 1.1;
+    padding-bottom: 0;
+    position: relative;
+    text-transform: inherit;
+    a {
+      background-color: transparent;
+      color: inherit;
+      position: relative;
+      text-decoration: none !important;
+      &:hover {
+        color: var(--global--color-primary) !important;
+      }
+    }
+  }
+  .sub-text {
+    @include fontSize(18px);
+  }
+  h1,
+  .h1 {
+    @include fontSize(28px);
+  }
+  @include min(768) {
+    h1,
+    .h1 {
+      @include fontSize(32px);
+    }
+    .sub-text {
+      @include fontSize(20px);
+    }
+  }
+  @include min(1200) {
+    padding-bottom: 20px;
+    h1,
+    .h1 {
+      @include fontSize(36px);
+    }
+    .sub-text {
+      @include fontSize(22px);
+    }
+  }
+  @include min(1600) {
+    padding-bottom: 30px;
+    h1,
+    .h1 {
+      @include fontSize(42px);
+    }
+    .sub-text {
+      @include fontSize(25px);
+    }
+  }
+}
