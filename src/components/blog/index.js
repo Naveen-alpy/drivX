@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import BannerModule from "../banner";
 
 const BlogPosts = () => {
-  const [post, setPost] = useState([]);
-  const [categories, setCategories] = useState([]);
+  //const [post, setPost] = useState([]);
+  //const [categories, setCategories] = useState([]);
   useEffect(() => {
     document.title = "DriverX | Blogs";
 

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SVG from "react-inlinesvg";
 import { Link } from "react-router-dom";
-import defaultImage from "../../assets/images/default-image.jpg";
+//import defaultImage from "../../assets/images/default-image.jpg";
 import authorIcon from "../../assets/images/author.svg";
 import dateIcon from "../../assets/images/icon-calendar.svg";
 
@@ -22,13 +22,13 @@ const PostListing = (props) => {
       10: "November",
       11: "December",
     };
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    //const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const d = newDate;
     const year = d.getFullYear();
     const date = d.getDate();
-    const monthIndex = d.getMonth();
+    //const monthIndex = d.getMonth();
     const monthName = months[d.getMonth()];
-    const dayName = days[d.getDay()]; // Thu
+    //const dayName = days[d.getDay()]; // Thu
 
     /* const formatted = `${dayName}, ${date} ${monthName} ${year}`; */
     const formatted = `${date} ${monthName} ${year}`;
@@ -42,7 +42,7 @@ const PostListing = (props) => {
   };
   const [newPostList, setNewPostList] = useState(defaultItems);
   useEffect(() => {
-    const { featured_media, author, authorLink } = props.pList;
+    const { featured_media, author } = props.pList;
 
     const pulledImage = axios.get(
       `http://localhost/wordpress/wp-json/wp/v2/media/${featured_media}`
@@ -57,9 +57,9 @@ const PostListing = (props) => {
         isLoaded: true,
       });
     });
-  }, []);
+  }, [props]);
 
-  const { title, id, date, excerpt, slug } = props.pList;
+  const { title, date, excerpt, slug } = props.pList;
   const { imgUrl, postAuthor } = newPostList;
   return (
     <article className="blog_post_wrapper-listing">

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import SVG from "react-inlinesvg";
 import { CompanyCall, CompanyLogo } from "../reusables";
 import lockIcon from "../../assets/images/lock.svg";
-import MenuItems from "./menu-items";
+//import MenuItems from "./menu-items";
 
 const HeaderPrjct = (props) => {
   const location = useLocation();

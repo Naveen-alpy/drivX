@@ -22,13 +22,13 @@ const SingleBlogPost = () => {
       10: "November",
       11: "December",
     };
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    //const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const d = newDate;
     const year = d.getFullYear();
     const date = d.getDate();
-    const monthIndex = d.getMonth();
+    //const monthIndex = d.getMonth();
     const monthName = months[d.getMonth()];
-    const dayName = days[d.getDay()]; // Thu
+    //const dayName = days[d.getDay()]; // Thu
 
     /* const formatted = `${dayName}, ${date} ${monthName} ${year}`; */
     const formatted = `${date} ${monthName} ${year}`;
