@@ -2,10 +2,11 @@ import { List, ListItem } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SVG from "react-inlinesvg";
-import { CompanyLogo } from "../reusables";
-import callIcon from "../../assets/images/call.svg";
+import { CompanyCall, CompanyLogo } from "../reusables";
+import lockIcon from "../../assets/images/lock.svg";
+import MenuItems from "./menu-items";
 
-const Header_prjct = () => {
+const HeaderPrjct = (props) => {
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
@@ -19,27 +20,13 @@ const Header_prjct = () => {
     { title: "Contact", slug: "contact" },
   ];
 
-  const logSignMenu = [
-    {
-      title: "Login",
-      url: "",
-      submenu: [
-        { title: "Student", url: "https://app.thedriverx.com/#/login" },
-        { title: "Instructor", url: "https://app.thedriverx.com/#/login" },
-      ],
-    },
-    {
-      title: "Sign Up",
-      url: "",
-      submenu: [
-        { title: "Student", url: "https://app.thedriverx.com/#/signup" },
-        { title: "Instructor", url: "https://app.thedriverx.com/#/signup" },
-      ],
-    },
-  ];
-
   // Slim Header
   const [slimHeader, setSlimHeader] = useState(false);
+  // Mobile Menu
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const buttonClickEvent = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
   useEffect(() => {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 10) {
@@ -50,32 +37,69 @@ const Header_prjct = () => {
     });
   }, [slimHeader]);
   return (
-    <header className={`project_header ${slimHeader ? "slim" : ""}`}>
+    <header
+      className={`project_header${showMobileMenu ? " openMobMenu" : ""}${
+        slimHeader ? " slim" : ""
+      } ${props.noBannerClass ? props.noBannerClass : ""}`}
+    >
       <div className="container dFlex">
         <nav className="logo_wrap">
-          <CompanyLogo link={true} linkTo={"/"} />
+          <CompanyLogo link={true} linkTo={"/"} title="DriverX" alt="DriverX" />
         </nav>
         <div className="header_right">
           <div className="hdr_right_top vCenHRight">
-            <a href="tel:8339582452" className="top-call vCenter">
-              <i className="vhCenter">
-                <SVG src={callIcon} title="Call" />
-              </i>
-              <span className="text">833-958-2452</span>
-            </a>
+            <CompanyCall />
             <nav className="log_sign">
-              <button type="button" className="project_btns-white">
-                <span>Login/Sign Up</span>
+              <button type="button" className="project_btns-white md">
+                <span className="text">Login/Sign Up</span>
+                <i className="icon">
+                  <SVG src={lockIcon} title="Login/Register" />
+                </i>
               </button>
-              <List>
-                {logSignMenu.map((dropMenu, index) => (
-                  <ListItem key={index}>
-                    {}
-                    <Link>{dropMenu.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
+              {/* <ul>
+                <li>
+                  Menu Item
+                  <ul>
+                    <li>
+                      Sub menu
+                      <ul>
+                        <li>Sub Sub menu</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  Login
+                  <ul>
+                    <li>
+                      Sub Child
+                      <ul>
+                        <li>Sub Sub Child</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Sign Up
+                  <ul>
+                    <li>Sub Child</li>
+                  </ul>
+                </li>
+              </ul> */}
             </nav>
+            <button
+              type="button"
+              className="mob_trigger"
+              onClick={() => {
+                buttonClickEvent();
+              }}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
           <nav className="main-menu">
             <List>
@@ -100,4 +124,4 @@ const Header_prjct = () => {
   );
 };
 
-export default Header_prjct;
+export default HeaderPrjct;

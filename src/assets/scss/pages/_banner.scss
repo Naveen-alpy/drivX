@@ -60,9 +60,12 @@
   }
   .banner_text_wrapper {
     padding-top: 30px;
+    img {
+      max-height: 50px;
+    }
     .main_title {
       color: var(--global--color-white);
-      @include fontSize(40px);
+      @include fontSize(25px);
       font-weight: $fw-500;
       line-height: 1.4;
       padding-top: 10px;
@@ -76,10 +79,95 @@
       }
     }
   }
-  @include min(1200) {
-    padding-top: 100px;
-    .container {
-      height: calc(98vh - 100px);
+  .slick-slide {
+    * {
+      position: relative;
+    }
+    &.slick-active {
+      .image-wrap {
+        position: absolute;
+      }
+    }
+  }
+  &.inner {
+    &:before {
+      display: none !important;
+    }
+    .banner_text_wrapper {
+      padding-top: 0;
+    }
+  }
+}
+.banner_slider {
+  .owl-carousel {
+    .owl-item {
+      height: 380px;
+      .item {
+        position: relative;
+        top: 50%;
+        @include transformY(-50%);
+      }
+      &.active {
+        .image-wrap {
+          @include border-radius(15px);
+          height: 292px;
+          padding: 6px 9px 20px;
+          position: relative;
+          width: 142px;
+          .wrapper {
+            height: 266px;
+          }
+        }
+      }
+      &.center {
+        z-index: 3;
+        .image-wrap {
+          @include border-radius(15px);
+          height: 380px;
+          left: 50%;
+          padding: 8px 8px 27px;
+          @include transformX(-50%);
+          width: 176px;
+          .wrapper {
+            height: 345px;
+          }
+        }
+        & + .active {
+          .image-wrap {
+            margin-left: -32px;
+          }
+        }
+      }
+    }
+  }
+  .image-wrap {
+    @include flex-align(hCenter);
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    @include transition(all, ease, 0.3s);
+    .wrapper {
+      line-height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    &:before {
+      background: transparent url(assets/images/mob-frame-with-shadow.png)
+        no-repeat top center;
+      background-size: contain;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+    }
+    img {
+      display: inline-block;
+      line-height: 0;
+      position: relative;
+      z-index: 1;
     }
   }
 }

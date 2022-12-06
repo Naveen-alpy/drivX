@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import BannerModule from "../banner";
 import PostListing from "./post-listing";
 
 const BlogPostsTemplate = () => {

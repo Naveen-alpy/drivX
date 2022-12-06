@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Footer_prjct from "./header-footer/footer";
-import Header_prjct from "./header-footer/header";
+import FooterPrjct from "./header-footer/footer";
+import HeaderPrjct from "./header-footer/header";
 
 const Template = () => {
   return (
     <>
-      <Header_prjct />
+      <HeaderPrjct />
       <Outlet />
-      <Footer_prjct />
+      <FooterPrjct />
     </>
   );
 };

@@ -95,7 +95,7 @@ h6 {
     @include fontSize(28px);
   }
 }
-.section-titles {
+.section-title {
   background-color: transparent;
   color: var(--global--color-black);
   display: block;
@@ -104,12 +104,12 @@ h6 {
   position: relative;
   text-align: left;
   text-transform: none;
-  h1,
   .h1 {
     color: inherit !important;
-    font-family: var(--global--font-family-secondary);
+    font-family: var(--global--font-family-primary);
+    @include fontSize(26px);
     font-weight: $fw-500;
-    line-height: 1.1;
+    line-height: 1.3;
     padding-bottom: 0;
     position: relative;
     text-transform: inherit;
@@ -124,39 +124,52 @@ h6 {
     }
   }
   .sub-text {
-    @include fontSize(18px);
+    @include fontSize(17px);
   }
-  h1,
-  .h1 {
-    @include fontSize(28px);
+  &.lg {
+    .h1 {
+      @include fontSize(30px);
+    }
   }
   @include min(768) {
-    h1,
     .h1 {
       @include fontSize(32px);
     }
     .sub-text {
       @include fontSize(20px);
     }
+    &.lg {
+      .h1 {
+        @include fontSize(36px);
+      }
+    }
   }
   @include min(1200) {
     padding-bottom: 20px;
-    h1,
     .h1 {
-      @include fontSize(36px);
+      @include fontSize(34px);
     }
     .sub-text {
       @include fontSize(22px);
     }
+    &.lg {
+      .h1 {
+        @include fontSize(42px);
+      }
+    }
   }
   @include min(1600) {
     padding-bottom: 30px;
-    h1,
     .h1 {
       @include fontSize(42px);
     }
     .sub-text {
       @include fontSize(25px);
+    }
+    &.lg {
+      .h1 {
+        @include fontSize(66px);
+      }
     }
   }
 }

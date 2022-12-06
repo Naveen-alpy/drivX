@@ -374,12 +374,12 @@ p {
     margin-bottom: 10px;
   }
   a {
-    color: var(--global--color-secondary);
+    color: var(--global--color-primary);
     display: inline;
     font-weight: $fw-600;
     text-decoration: none !important;
     &:hover {
-      color: var(--global--color-primary);
+      color: var(--global--color-black);
     }
   }
   & + h1,
@@ -544,12 +544,13 @@ picture {
 }
 .slick-dots,
 .container,
-.elementor-section.elementor-section-boxed > .elementor-container,
 .container-fluid {
   box-sizing: border-box !important;
   -webkit-box-sizing: border-box !important;
   margin-right: auto;
   margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   width: 100%;
 }
@@ -582,25 +583,6 @@ picture {
 }
 .slick-dots,
 .container {
-  padding-right: 10px !important;
-  padding-left: 10px !important;
-  @include min(576) {
-    max-width: 540px !important;
-  }
-  @include min(768) {
-    max-width: 720px !important;
-  }
-  @include min(992) {
-    max-width: 960px !important;
-  }
-  @include min(1200) {
-    max-width: 1140px !important;
-  }
-  @include min(1600) {
-    max-width: 1500px !important;
-  }
-}
-.elementor-section.elementor-section-boxed > .elementor-container {
   @include min(576) {
     max-width: 540px !important;
   }
@@ -618,8 +600,6 @@ picture {
   }
 }
 .container-fluid {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
   @include min(576) {
     max-width: 540px !important;
   }

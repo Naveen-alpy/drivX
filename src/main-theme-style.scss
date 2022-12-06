@@ -1,8 +1,8 @@
 @import "assets/scss/settings/file-header";
 :root {
   // Font Family
-  --font-primary: "Open Sans", sans-serif;
-  --font-secondary: "Poppins", sans-serif;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
   /* Font Family */
   --global--font-family-primary: var(
     --font-primary,
@@ -31,6 +31,8 @@
 
   // Colors
   --global--color-green: #007343;
+  --global--color-button-green: #139b50;
+  --global--color-dark-green: #29843e;
   --global--color-yellow: #f78f1d;
   --global--color-black: #000;
   --global--color-white: #fff;
@@ -38,11 +40,13 @@
   --global--color-border: #dcdcdc;
   --global--color-grey: #f0f0f0;
   --global--color-footer-bg: #030303;
+  --global--color-text-light: #333;
   --global--color-primary: var(--global--color-green);
   --global--color-secondary: var(--global--color-yellow);
   --global--color-border: var(--global--color-black);
   --global--color-heading: var(--global--color-black);
   --global--color-base-text: var(--global--color-black);
+  --global--color-text-fade: #ccc;
   --global--color-banner-text-light: #faf8f2;
 
   // Elevation
@@ -78,7 +82,10 @@
 
 // Pages
 @import "assets/scss/pages/common-styles";
-@import "assets/scss/pages/mediaqueries";
 @import "assets/scss/pages/header";
 @import "assets/scss/pages/banner";
+@import "assets/scss/pages/home";
 @import "assets/scss/pages/footer";
+@import "assets/scss/pages/inner-pages";
+@import "assets/scss/pages/blog";
+@import "assets/scss/pages/mediaqueries";
