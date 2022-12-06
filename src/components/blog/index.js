@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import BannerModule from "../banner";
+import InnerBanner from "../banner/inner-banner";
 
 const BlogPosts = () => {
   //const [post, setPost] = useState([]);
@@ -27,7 +27,7 @@ const BlogPosts = () => {
 
   return (
     <main className="blog_page_template">
-      <BannerModule />
+      <InnerBanner parentClass="" pageLinkBtnDisplay="block" />
       <section className="container">
         <h1>Blogs</h1>
         <div className="tw-row">

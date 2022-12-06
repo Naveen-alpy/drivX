@@ -5,36 +5,9 @@ import { Link } from "react-router-dom";
 //import defaultImage from "../../assets/images/default-image.jpg";
 import authorIcon from "../../assets/images/author.svg";
 import dateIcon from "../../assets/images/icon-calendar.svg";
+import moment from "moment";
 
 const PostListing = (props) => {
-  function formatDate(newDate) {
-    const months = {
-      0: "January",
-      1: "February",
-      2: "March",
-      3: "April",
-      4: "May",
-      5: "June",
-      6: "July",
-      7: "August",
-      8: "September",
-      9: "October",
-      10: "November",
-      11: "December",
-    };
-    //const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const d = newDate;
-    const year = d.getFullYear();
-    const date = d.getDate();
-    //const monthIndex = d.getMonth();
-    const monthName = months[d.getMonth()];
-    //const dayName = days[d.getDay()]; // Thu
-
-    /* const formatted = `${dayName}, ${date} ${monthName} ${year}`; */
-    const formatted = `${date} ${monthName} ${year}`;
-    return formatted.toString();
-  }
-
   const defaultItems = {
     imgUrl: "",
     postAuthor: "",
@@ -70,7 +43,7 @@ const PostListing = (props) => {
         <div className="info-wrapper-top vCenter">
           <div className="date vCenter">
             <SVG src={dateIcon} title="Calendar" />
-            {formatDate(new Date(date))}
+            {moment(date).format("D MMMYYYY")}
           </div>
           <Link to="" className="vCenter author m-l-auto">
             <i>
