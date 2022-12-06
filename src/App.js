@@ -15,6 +15,9 @@ import "./main-theme-style.css";
 import ThankYou from "./components/pages/others/thank-you";
 import PageNotFound from "./components/pages/others/404";
 import DrivingInstructors from "./components/pages/driving-instructors";
+import BdeCourse from "./components/pages/bde-course";
+import ServiceAreas from "./components/pages/service-areas";
+import ContactUs from "./components/pages/contact";
 
 const App = () => {
   return (
@@ -30,13 +33,13 @@ const App = () => {
                 path="driving-instructors"
                 element={<DrivingInstructors />}
               />
-              <Route path="bde-course" element={<AboutPage />} />
+              <Route path="bde-course" element={<BdeCourse />} />
               <Route path="blogs" element={<BlogPosts />}>
                 <Route index element={<BlogPostsTemplate />} />
                 <Route path=":myslug" element={<SingleBlogPost />} />
               </Route>
-              <Route path="service-areas" element={<AboutPage />} />
-              <Route path="contact" element={<AboutPage />} />
+              <Route path="service-areas" element={<ServiceAreas />} />
+              <Route path="contact" element={<ContactUs />} />
             </Route>
             <Route path="/" element={<NoBannerTemplate />}>
               <Route path="site-map" element={<SiteMap />} />

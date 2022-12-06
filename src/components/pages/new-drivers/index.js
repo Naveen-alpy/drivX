@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import InnerBanner from "../../banner/inner-banner";
 import FooterForm from "../../footer-form";
 import TestimonialSection from "../../testimonial-section";
 
 const NewDriversPage = () => {
+  useEffect(() => {
+    document.title = "DriverX | New Drivers";
+  }, []);
   return (
     <main className="newdriver_page">
       <InnerBanner
@@ -20,7 +23,7 @@ const NewDriversPage = () => {
         pageLinkBtnAlign="left"
         pageLinkTo="/about"
       />
-      <section className="container">
+      <section className="container cmn-space">
         New Drivers Page Content Goes Here!
       </section>
       <TestimonialSection />

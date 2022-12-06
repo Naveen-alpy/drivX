@@ -2,19 +2,20 @@ import React, { useEffect } from "react";
 import InnerBanner from "../../banner/inner-banner";
 import FooterForm from "../../footer-form";
 import TestimonialSection from "../../testimonial-section";
-const DrivingInstructors = () => {
+
+const ServiceAreas = () => {
   useEffect(() => {
-    document.title = "DriverX | Driving Instructors";
+    document.title = "DriverX | Service Areas";
   }, []);
   return (
-    <main className="driving_instructor_page">
+    <main className="service_areas_page">
       <InnerBanner parentClass="" pageLinkBtnDisplay="block" />
       <section className="container cmn-space">
-        Driving Instructors Page Content Goes Here!
+        Service Areas Page Content Goes Here!
       </section>
       <TestimonialSection />
       <FooterForm />
     </main>
   );
 };
-export default DrivingInstructors;
+export default ServiceAreas;
