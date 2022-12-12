@@ -20,7 +20,15 @@ const AboutPage = () => {
           content="Beginner friendly page for learning React Helmet."
         />
       </Helmet>
-      <InnerBanner parentClass="" pageLinkBtnDisplay="block" />
+      <InnerBanner
+        parentClass=""
+        firstLine={
+          <>
+            About Driver<span className="light-green">X</span>
+          </>
+        }
+        pageLinkBtnDisplay="block"
+      />
       <AboutSectionOne />
       <AboutSectionTwo />
       <AboutSectionThree />

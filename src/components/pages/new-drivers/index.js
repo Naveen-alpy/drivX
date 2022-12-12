@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import InnerBanner from "../../banner/inner-banner";
 import FooterForm from "../../footer-form";
 import TestimonialSection from "../../testimonial-section";
+import NewDriverSectionOne from "./section-1";
+import NewDriverSectionTwo from "./section-2";
+import NewDriverSectionThree from "./section-3";
+import NewDriverSectionFour from "./section-4";
+import NewDriverSectionFive from "./section-5";
 
 const NewDriversPage = () => {
   useEffect(() => {
@@ -10,22 +15,17 @@ const NewDriversPage = () => {
   return (
     <main className="newdriver_page">
       <InnerBanner
-        parentClass="new-drivers"
-        firstLine="Revolutioning the Way of Drivers"
-        secondLine={
-          <>
-            <strong>Students</strong> and <strong>Instructors</strong> Connect
-          </>
-        }
+        parentClass=""
+        firstLine={<>New Drivers</>}
         appButtonDisplay="none"
-        pageLinkBtnDisplay="block"
-        pageLinkBtnText="Read More"
-        pageLinkBtnAlign="left"
+        pageLinkBtnText="Learn More"
         pageLinkTo="/about"
       />
-      <section className="container cmn-space">
-        New Drivers Page Content Goes Here!
-      </section>
+      <NewDriverSectionOne />
+      <NewDriverSectionTwo />
+      <NewDriverSectionThree />
+      <NewDriverSectionFour />
+      <NewDriverSectionFive />
       <TestimonialSection />
       <FooterForm />
     </main>

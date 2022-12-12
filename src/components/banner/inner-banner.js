@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SVG from "react-inlinesvg";
 // Images and Icons
-import fullLogo from "../../assets/images/logo.png";
+//import fullLogo from "../../assets/images/logo.png";
 import iconAndroid from "../../assets/images/icon-android.svg";
 import iconIos from "../../assets/images/icon-ios.svg";
 
@@ -18,12 +18,19 @@ const InnerBanner = (props) => {
       <div className="container vCenter">
         <div className="text_container">
           <article className="banner_text_wrapper text-white">
-            <img src={fullLogo} alt="DriverX" />
+            {/* <img src={fullLogo} alt="DriverX" /> */}
             <h1 className="main_title">
               <span className="ipad-clear">
                 {props.firstLine ? props.firstLine : "Revolutionizing The Way "}
               </span>
-              <span className="ipad-clear">
+              <span
+                className="ipad-clear"
+                style={{
+                  display: props.secondLineDisplay
+                    ? props.secondLineDisplay
+                    : "none",
+                }}
+              >
                 {props.secondLine ? (
                   props.secondLine
                 ) : (
@@ -34,6 +41,16 @@ const InnerBanner = (props) => {
                 )}
               </span>
             </h1>
+            <div
+              className="sub-text"
+              style={{
+                display: props.subTextDisplay ? props.subTextDisplay : "block",
+              }}
+            >
+              {props.subTextValue
+                ? props.subTextValue
+                : "Connecting Driving Instructors, and Driving Students at the touch of a button"}
+            </div>
             <nav
               className="button-group vCenter"
               style={{
@@ -67,7 +84,7 @@ const InnerBanner = (props) => {
               style={{
                 display: props.pageLinkBtnDisplay
                   ? props.pageLinkBtnDisplay
-                  : "none",
+                  : "block",
               }}
             >
               <Link

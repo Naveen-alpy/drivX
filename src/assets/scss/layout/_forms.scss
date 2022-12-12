@@ -46,7 +46,7 @@ textarea,
 select {
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--global--color-white);
+  background-color: transparent;
   border: 0;
   border-bottom: 1px solid var(--global--color-border);
   @include border-radius(0);
