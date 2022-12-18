@@ -8,7 +8,7 @@ const BlogPosts = () => {
   });
 
   /* const data2 = axios.get(
-      `http://localhost/wordpress/wp-json/wp/v2/categories`
+      `https://thedriverx.com/blog/wp-json/wp/v2/categories`
     ); */
 
   return (

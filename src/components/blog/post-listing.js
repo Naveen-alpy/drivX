@@ -18,10 +18,10 @@ const PostListing = (props) => {
     const { featured_media, author } = props.pList;
 
     const pulledImage = axios.get(
-      `http://localhost/wordpress/wp-json/wp/v2/media/${featured_media}`
+      `https://thedriverx.com/blog/wp-json/wp/v2/media/${featured_media}`
     );
     const postedAuthor = axios.get(
-      `http://localhost/wordpress/wp-json/wp/v2/users/${author}`
+      `https://thedriverx.com/blog/wp-json/wp/v2/users/${author}`
     );
     Promise.all([pulledImage, postedAuthor]).then((res) => {
       setNewPostList({
@@ -32,12 +32,12 @@ const PostListing = (props) => {
     });
   }, [props]);
 
-  const { title, date, excerpt, slug } = props.pList;
+  const { title, date, excerpt, slug, _embedded } = props.pList;
   const { imgUrl, postAuthor } = newPostList;
   return (
     <article className="blog_post_wrapper-listing">
       <figure className="post_thumb vhCenter">
-        <img src={imgUrl} alt="" />
+        <img src={_embedded["wp:featuredmedia"][0].source_url} alt="" />
       </figure>
       <div className="post_brief">
         <div className="info-wrapper-top vCenter">

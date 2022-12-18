@@ -13,23 +13,24 @@ const SingleBlogPost = () => {
   useEffect(() => {
     console.log("Single Blog Posts", params.myslug);
     const postLists = axios.get(
-      `http://localhost/wordpress/wp-json/wp/v2/posts?slug=${params.myslug}`
+      /* `http://localhost/wordpress/wp-json/wp/v2/posts?slug=${params.myslug}` */
+      `https://thedriverx.com/blog/wp-json/wp/v2/posts?slug=${params.myslug}&_embed`
     );
     Promise.all([postLists]).then((res) => {
       const [getPostList] = res;
-      const { featured_media, author, id } = getPostList.data[0];
+      /* const { featured_media, author, id } = getPostList.data[0];
       console.log("Response of Single Post", getPostList.data[0]);
       // Featured Image
       const pulledImage = axios.get(
-        `http://localhost/wordpress/wp-json/wp/v2/media/${featured_media}`
+        `https://thedriverx.com/blog/wp-json/wp/v2/media/${featured_media}`
       );
       // Author Name
       const authorName = axios.get(
-        `http://localhost/wordpress/wp-json/wp/v2/users/${author}`
+        `https://thedriverx.com/blog/wp-json/wp/v2/users/${author}`
       );
       // Category
       const postCategory = axios.get(
-        `http://localhost/wordpress/wp-json/wp/v2/categories?post=${id}`
+        `https://thedriverx.com/blog/wp-json/wp/v2/categories?post=${id}`
       );
       Promise.all([pulledImage, authorName, postCategory]).then((res) => {
         const arrCategory = res[2].data.map((cats) => {
@@ -42,8 +43,9 @@ const SingleBlogPost = () => {
           author: res[1].data.name,
           categories: arrCategory,
         };
-        setSingleBlog(getPostList.data[0]);
-      });
+        // setSingleBlog(getPostList.data[0]);
+      }); */
+      setSingleBlog(getPostList.data[0]);
     });
   }, [params]);
 
@@ -58,7 +60,11 @@ const SingleBlogPost = () => {
               <h2>{singleBlog.title.rendered}</h2>
             </header>
             <figure className="post_thumb vhCenter">
-              <img src={singleBlog.featured_media} alt="" />
+              {/* <img src={singleBlog.featured_media} alt="" /> */}
+              <img
+                src={singleBlog._embedded["wp:featuredmedia"][0].source_url}
+                alt=""
+              />
               <div className="date"></div>
             </figure>
             <div className="post_brief">
@@ -71,7 +77,7 @@ const SingleBlogPost = () => {
                   <i>
                     <SVG src={authorIcon} title="User Avatar" />
                   </i>
-                  {singleBlog.author}
+                  {/* {singleBlog.author} */}
                 </Link>
               </div>
             </div>

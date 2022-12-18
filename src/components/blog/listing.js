@@ -5,9 +5,9 @@ import PostListing from "./post-listing";
 const BlogPostsTemplate = () => {
   const [getBlogPosts, setGetBlogPosts] = useState([]);
   useEffect(() => {
-    /* const data1 = axios.get("http://localhost/wordpress/wp-json/wp/v2/posts");
+    /* const data1 = axios.get("https://thedriverx.com/blog/wp-json/wp/v2/posts");
     const data2 = axios.get(
-      `http://localhost/wordpress/wp-json/wp/v2/categories`
+      `https://thedriverx.com/blog/wp-json/wp/v2/categories`
     );
     Promise.all([data1, data2]).then((res) => {
       const [res1, res2] = res;
@@ -22,7 +22,8 @@ const BlogPostsTemplate = () => {
     }); */
 
     const postLists = axios.get(
-      "http://localhost/wordpress/wp-json/wp/v2/posts"
+      /* "https://thedriverx.com/blog/wp-json/wp/v2/posts" */
+      "https://thedriverx.com/blog/wp-json/wp/v2/posts?_embed"
     );
     Promise.all([postLists]).then((res) => {
       const [getPostList] = res;
