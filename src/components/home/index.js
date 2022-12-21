@@ -17,31 +17,33 @@ const HomePage = () => {
   const settings = {
     canvas: {
       canvasFillSpace: true,
-      width: "100%",
-      height: "100%",
+      width: "100vw",
+      height: "100vh",
       useBouncyWalls: false,
     },
     particle: {
-      particleCount: 50,
-      color: "#94ecbe",
-      minSize: 2,
-      maxSize: 5,
+      particleCount: 30,
+      color: "#2fa14a",
+      minSize: 5,
+      maxSize: 10,
     },
     velocity: {
-      directionAngle: 0,
+      directionAngle: 10,
       directionAngleVariance: 360,
       minSpeed: 1,
       maxSpeed: 3,
     },
     opacity: {
       minOpacity: 0,
-      maxOpacity: 0.5,
-      opacityTransitionTime: 3000,
+      maxOpacity: 0.4,
+      opacityTransitionTime: 5000,
     },
   };
   return (
     <>
-      {/* <ParticleBackground settings={settings} /> */}
+      <section className="particleBg">
+        <ParticleBackground settings={settings} />
+      </section>
       <BannerModule />
       <SectionOne />
       <SectionTwo />

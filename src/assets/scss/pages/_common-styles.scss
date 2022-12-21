@@ -57,6 +57,14 @@
 .outer_wrapper {
   overflow: hidden;
 }
+.particleBg {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+}
 .cmn-space {
   padding-bottom: 30px;
   padding-top: 30px;

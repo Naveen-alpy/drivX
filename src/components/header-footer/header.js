@@ -27,6 +27,9 @@ const HeaderPrjct = (props) => {
   const buttonClickEvent = () => {
     setShowMobileMenu(!showMobileMenu);
   };
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
   useEffect(() => {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 10) {
@@ -104,7 +107,14 @@ const HeaderPrjct = (props) => {
           <nav className="main-menu">
             <List>
               <ListItem className={splitLocation[1] === "" ? "active" : ""}>
-                <Link to="/">Home</Link>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    scrollTop();
+                  }}
+                >
+                  Home
+                </Link>
               </ListItem>
               {headerMenuItems.map((menuItems, index) => (
                 <ListItem
@@ -113,7 +123,14 @@ const HeaderPrjct = (props) => {
                   }
                   key={index}
                 >
-                  <Link to={menuItems.slug}>{menuItems.title}</Link>
+                  <Link
+                    to={menuItems.slug}
+                    onClick={() => {
+                      scrollTop();
+                    }}
+                  >
+                    {menuItems.title}
+                  </Link>
                 </ListItem>
               ))}
             </List>

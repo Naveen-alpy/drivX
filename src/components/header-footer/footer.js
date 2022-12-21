@@ -8,6 +8,9 @@ import {
 } from "../reusables";
 
 const FooterPrjct = () => {
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
   // Footer Menu
   const location = useLocation();
   const { pathname } = location;
@@ -61,7 +64,13 @@ const FooterPrjct = () => {
           <nav className="footer_navigation dFlex" role="navigation">
             <ul className="ftr_main_nav">
               <li className={splitLocation[1] === "" ? "active" : ""}>
-                <Link to={"/"} title="Home">
+                <Link
+                  to={"/"}
+                  title="Home"
+                  onClick={() => {
+                    scrollTop();
+                  }}
+                >
                   Home
                 </Link>
               </li>
@@ -72,7 +81,13 @@ const FooterPrjct = () => {
                   }
                   key={index}
                 >
-                  <Link to={items.slug} title={items.title}>
+                  <Link
+                    to={items.slug}
+                    title={items.title}
+                    onClick={() => {
+                      scrollTop();
+                    }}
+                  >
                     {items.title}
                   </Link>
                 </li>
@@ -82,7 +97,13 @@ const FooterPrjct = () => {
               <li
                 className={splitLocation[1] === "service-areas" ? "active" : ""}
               >
-                <Link to={"/service-areas"} title="Service Areas">
+                <Link
+                  to={"/service-areas"}
+                  title="Service Areas"
+                  onClick={() => {
+                    scrollTop();
+                  }}
+                >
                   Service Areas
                 </Link>
                 <ul>
