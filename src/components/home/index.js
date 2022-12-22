@@ -41,9 +41,6 @@ const HomePage = () => {
   };
   return (
     <>
-      <section className="particleBg">
-        <ParticleBackground settings={settings} />
-      </section>
       <BannerModule />
       <SectionOne />
       <SectionTwo />
@@ -53,6 +50,9 @@ const HomePage = () => {
       <SectionSix />
       <TestimonialSection />
       <DownloadShare />
+      <section className="particleBg">
+        <ParticleBackground settings={settings} />
+      </section>
     </>
   );
 };
